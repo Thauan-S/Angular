@@ -1,0 +1,18 @@
+
+@if (meuBooleano) {
+    <p>hello {{meuBooleano}}</p>
+    <p>{{minhaPropDeFora}}</p>
+}@else {
+    <p>hello</p>
+}
+<!-- @for (item of arrtest; track item.id) {
+    <p>{{item.name}},{{item.id}}</p>
+} -->
+<button
+ [id]="idbutton" 
+ (click)="showAlert($event)">
+   <!-- enviando pra minha func em meu .ts com $ -->
+ <!-- os eventos do angular são diferentes do react tipos:  https://v17.angular.io/guide/event-binding  -->
+</button>
+<!-- <button [attr.atributodinamico]="idbutton"></button> -->
+ <!-- // utilizando atributos do meu home.ts -->

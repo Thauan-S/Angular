@@ -1,0 +1,36 @@
+<form class="login-form" (ngSubmit)="onSubmit()">
+  <mat-form-field class="full-width">
+    <mat-label>Email</mat-label>
+    <input
+      matInput
+      type="email"
+      [(ngModel)]="loginForm.email"
+      name="email"
+      placeholder="Digite seu email"
+      required>
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Senha</mat-label>
+    <input
+      matInput
+      type="password"
+      [(ngModel)]="loginForm.password"
+      name="password"
+      placeholder="Digite sua senha"
+      required>
+  </mat-form-field>
+
+  <button
+    mat-raised-button
+    color="primary"
+    type="submit"
+    class="submit-button">
+    Entrar
+  </button>
+
+  <div class="form-info">
+    <p>Email: {{ loginForm.email }}</p>
+    <p>Senha: {{ loginForm.password }}</p>
+  </div>
+</form>

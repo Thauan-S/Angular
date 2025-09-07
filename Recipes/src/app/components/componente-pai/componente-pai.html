@@ -1,0 +1,15 @@
+<div>
+<p>
+Mensagem recebida do comp filho :{{messageReceived}}
+</p>
+<button (click)="sendMessageTochildren()">Send Message To children</button>
+
+<button (click)="sendMessageTochildrenGETSET()">Send to test get and set in children</button>
+                       <!-- //(filho)="método do comp pai()"                                     // [prop do filho]="prop do pai" -->
+<app-componente-filho
+  (sendPropEmitter)="receiveMessage($event)"
+   [recebeProp]="message" 
+   [receivedProppGETSET]="message"></app-componente-filho>
+
+   
+</div>

@@ -1,0 +1,42 @@
+<form [formGroup]="meuForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="nome">Nome:</label>
+    <input id="nome" type="text" formControlName="nome">
+    <div *ngIf="meuForm.get('nome')?.invalid && meuForm.get('nome')?.touched">
+      Nome é obrigatório.
+    </div>
+  </div>
+
+  <div>
+    <label for="email">Email:</label>
+    <input id="email" type="email" formControlName="email">
+      <!-- //criei um get de nomecontrol para acessar o controle do formulário  -->
+    <p *ngIf="nomeControl.hasError('required')&& nomeControl.touched">
+      Email é obrigatório e deve ser válido.
+    </p>
+  </div>
+
+  <div formGroupName="endereco">
+    <h3>Endereço</h3>
+    <label for="rua">Rua:</label>
+    <input id="rua" type="text" formControlName="rua">
+    <br>
+    <label for="numero">Número:</label>
+    <input id="numero" type="text" formControlName="numero">
+  </div>
+
+  <div formArrayName="musicas">
+    <h3>Músicas</h3>
+    <div *ngFor="let musica of musicas.controls; let i = index" >
+      <label for="musica-{{i}}">Música {{ i + 1 }}:</label>
+      <input id="musica-{{i}}" type="text" [formControlName]="i">
+      <button type="button" (click)="removerMusica(i)">Remover</button>
+    </div>
+  </div>
+  <button type="button" (click)="adicionarMusica()">Adicionar</button>
+  <br>
+  <!-- [disabled]="meuForm.invalid" é usado para desabilitar o botão de enviar se o formulário for inválido -->
+  <button type="submit" [disabled]="meuForm.invalid">Enviar</button>
+</form>
+<p>{{meuForm.value | json}}</p>
+

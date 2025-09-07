@@ -8,7 +8,8 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class LoginServiceImp implements LoginService {
-  private http = inject(HttpClient)
+  private readonly http = inject(HttpClient)
+  
   login(loginCredentials: LoginCredentials): Observable<LoginResponse> {
     return this.http.post<LoginResponse>(`${environment.apiUrl}${environment.endpoints.login}`, loginCredentials)
       .pipe(catchError((error) => {
@@ -16,5 +17,4 @@ export class LoginServiceImp implements LoginService {
       }
       ))
   }
-
 }

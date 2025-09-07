@@ -1,0 +1,7 @@
+
+//template variable tenho q Por NGMODEL AQUI para DETECTAR AUTOMÁTICAMENTE
+<input type="text" #MeuInputautomatico ngModel>change-detection automático!>
+<p>{{MeuInputautomatico.value}}</p>
+<input type="text" #MeuInput>change-detection works!>
+<p>{{MeuInput.value}}</p>
+<button (click)="atualizar(MeuInput)"></button>

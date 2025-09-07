@@ -1,17 +1,25 @@
 <form class="login-form" (ngSubmit)="onSubmit()">
   <mat-form-field class="full-width">
     <mat-label>Email</mat-label>
+      <!-- //TWO WAY DATA BINDING[(ngModel)]  -->
     <input
       matInput
       type="email"
+        
       [(ngModel)]="loginForm.email"
       name="email"
       placeholder="Digite seu email"
+      #emailCtrl="ngModel"
       required>
+      <div *ngIf="emailCtrl.invalid  && emailCtrl.dirty">
+        <small *ngIf="emailCtrl.errors?.['required']">O email é obrigatório.</small>
+        <small *ngIf="emailCtrl.errors?.['required']">Formato de email inválido.</small>
+      </div>
   </mat-form-field>
 
   <mat-form-field class="full-width">
     <mat-label>Senha</mat-label>
+    <!-- //TWO WAY DATA BINDING[(ngModel)]  -->
     <input
       matInput
       type="password"
@@ -33,4 +41,6 @@
     <p>Email: {{ loginForm.email }}</p>
     <p>Senha: {{ loginForm.password }}</p>
   </div>
+
 </form>
+<p>Evento recebido de Home{{recebendoValorName}}</p>

@@ -1,8 +1,7 @@
 
 @if (meuBooleano) {
     <p>hello {{meuBooleano}}</p>
-    <p>{{minhaPropDeFora}}</p>
-    <p (emitindoValorName)="logar('teste')" >recebendo meu evento do home.ts </p>
+    <p (click)="logar('teste')" >recebendo meu evento do home.ts </p>
 }@else {
     <p>hello</p>
 }
@@ -11,9 +10,12 @@
 } -->
 <button
  [id]="idbutton"
- (click)="showAlert($event)">
+ (click)="showAlert(idbutton)">
    <!-- enviando pra minha func em meu .ts com $ -->
  <!-- os eventos do angular são diferentes do react tipos:  https://v17.angular.io/guide/event-binding  -->
 </button>
+<button (click)="showAlert($event)"> enviar valor</button>
+
+<p>teste {{valorRecebido}}</p>
 <!-- <button [attr.atributodinamico]="idbutton"></button> -->
  <!-- // utilizando atributos do meu home.ts -->

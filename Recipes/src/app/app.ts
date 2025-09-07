@@ -1,12 +1,13 @@
+import { CommonModule } from '@angular/common';
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { Home } from "./components/home/home";
-import { Login } from './components/login/login';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterLink, RouterOutlet } from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, Login],
+  imports: [RouterOutlet,RouterLink,ReactiveFormsModule,CommonModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

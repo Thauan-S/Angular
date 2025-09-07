@@ -1,3 +1,19 @@
-<login></login>
-<router-outlet />
+<header>
+  <h1>Settings</h1>
+  <nav>
+    <ul>
+      <li><a routerLink="login">Login</a></li>
+      <li><a routerLink="">Home</a></li>
+      <li><a routerLink="comp">Componente Pai</a></li>
+      <li><a routerLink="t">change-detection</a></li>
+       <li><a routerLink="fb">FormBuilder Exrerno</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <router-outlet></router-outlet> <!-- conteúdo dinâmico aqui -->
+</main>
+<footer>
+  <p>&copy; 2025 Meu App de receitas</p>
+</footer>
 <!-- // usado para mapear as rotas do app routes -->
